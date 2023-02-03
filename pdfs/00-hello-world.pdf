@@ -1,0 +1,114 @@
+%PDF-1.7
+%µ¶
+
+1 0 obj
+<</Type/Pages/Count 1/Kids[2 0 R]>>
+endobj
+
+2 0 obj
+<</Type/Page/MediaBox[0 0 612 320]/Resources 3 0 R/Parent 1 0 R/Contents 6 0 R>>
+endobj
+
+3 0 obj
+<</Font<</F0<</Type/Font/BaseFont/Times-Roman/Subtype/Type1>>>>>>
+endobj
+
+4 0 obj
+<</Length 362>>
+stream
+1 0 0 1 50 260 cm
+q
+    BT
+        /F0 36. Tf
+        0.2 0.5 0.2 rg
+        (Hello, World!) Tj
+    ET
+Q
+
+1 0 0 1 0 -60 cm
+q
+    0.5 0 1 RG
+    0.9 0.9 0.9 rg
+    0 0 200 20 re
+    B
+Q
+q
+    
+    0 -40 m
+    300 -40 l
+    S
+
+    0 -60 m
+    300 -60 l
+    S
+    
+    2 w
+    0 -100 m
+    20 -150 l
+    40 -100 l
+    60 -150 l
+    80 -100 l
+    100 -150 l
+    S
+Q
+
+endstream
+endobj
+
+5 0 obj
+<</Type/Catalog/Pages 1 0 R>>
+endobj
+
+6 0 obj
+<</Length 238>>
+stream
+1 0 0 1 50 260 cm
+q
+BT
+/F0 36 Tf
+.2 .5 .2 rg
+(Hello, World!) Tj
+ET
+Q
+1 0 0 1 0 -60 cm
+q
+.5 0 1 RG
+.9 .9 .9 rg
+0 0 200 20 re
+B
+Q
+q
+0 -40 m
+300 -40 l
+S
+0 -60 m
+300 -60 l
+S
+2 w
+0 -100 m
+20 -150 l
+40 -100 l
+60 -150 l
+80 -100 l
+100 -150 l
+S
+Q
+
+endstream
+endobj
+
+xref
+0 7
+0000000000 65536 f 
+0000000016 00000 n 
+0000000068 00000 n 
+0000000165 00000 n 
+0000000247 00000 n 
+0000000659 00000 n 
+0000000705 00000 n 
+
+trailer
+<</Size 7/Root 5 0 R>>
+startxref
+993
+%%EOF
