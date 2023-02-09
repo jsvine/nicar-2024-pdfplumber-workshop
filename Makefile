@@ -19,7 +19,7 @@ imagemagick-mac:
 	@if [ ! -f "/usr/local/lib/libMagickWand.dylib" ]; then find $$(brew --prefix imagemagick@6)/lib -name "libMagickWand*.dylib" -type f -exec ln -s {} /usr/local/lib/libMagickWand.dylib \;; fi
 
 venv: requirements.txt
-	@if [ ! -d "venv" ]; then python -m venv venv; fi
+	@if [ ! -d "venv" ]; then python3 -m venv venv; fi
 	@venv/bin/pip install -r requirements.txt
 
 lint:
