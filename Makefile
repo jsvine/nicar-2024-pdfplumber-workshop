@@ -15,8 +15,8 @@ requirements.txt: requirements.in
 	@pip-compile requirements.in
 
 imagemagick-mac:
-	@brew install freetype imagemagick@6
-	@if [ ! -f "/usr/local/lib/libMagickWand.dylib" ]; then find $$(brew --prefix imagemagick@6)/lib -name "libMagickWand*.dylib" -type f -exec ln -s {} /usr/local/lib/libMagickWand.dylib \;; fi
+	@brew install freetype imagemagick@7
+	@if [ ! -f "/usr/local/lib/libMagickWand.dylib" ]; then find $$(brew --prefix imagemagick@7)/lib -name "libMagickWand*.dylib" -type f -exec ln -s {} /usr/local/lib/libMagickWand.dylib \;; fi
 
 venv: requirements.txt
 	@if [ ! -d "venv" ]; then python3 -m venv venv; fi
