@@ -201,7 +201,7 @@ pathspec==0.11.0
     # via black
 pdfminer-six==20221105
     # via pdfplumber
-pdfplumber==0.7.6
+pdfplumber==0.8.0
     # via -r requirements.in
 pexpect==4.8.0
     # via ipython

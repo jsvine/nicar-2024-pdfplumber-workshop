@@ -5,4 +5,4 @@ jupyter==1.0.0
 nbexec==0.2.0
 nbqa==1.6.1
 pandas==1.5.3
-pdfplumber>=0.7.6
+pdfplumber>=0.8.0
