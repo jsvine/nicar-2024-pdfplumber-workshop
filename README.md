@@ -1,6 +1,8 @@
 # `pdfplumber`: A NICAR 2023 Workshop
 
-## Local installation instructions
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jsvine/nicar-2023-pdfplumber-workshop/HEAD)
+
+## Local installation instructions (for MacOS)
 
 ```
 make imagemagick-mac

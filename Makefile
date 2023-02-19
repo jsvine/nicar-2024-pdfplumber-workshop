@@ -11,16 +11,16 @@ clear:
 
 pdfs: $(ALL_PDFS)
 
-requirements.txt: requirements.in
-	@pip-compile requirements.in
+requirements: config/requirements.in
+	@cd config && pip-compile requirements.in
 
 imagemagick-mac:
 	@brew install freetype imagemagick@7
 	@if [ ! -f "/usr/local/lib/libMagickWand.dylib" ]; then find $$(brew --prefix imagemagick@7)/lib -name "libMagickWand*.dylib" -type f -exec ln -s {} /usr/local/lib/libMagickWand.dylib \;; fi
 
-venv: requirements.txt
+venv: config/requirements.txt
 	@if [ ! -d "venv" ]; then python3 -m venv venv; fi
-	@venv/bin/pip install -r requirements.txt
+	@venv/bin/pip install -r config/requirements.txt
 
 lint:
 	nbqa black --check notebooks

@@ -4,6 +4,10 @@
 #
 #    pip-compile requirements.in
 #
+aiofiles==22.1.0
+    # via ypy-websocket
+aiosqlite==0.18.0
+    # via ypy-websocket
 anyio==3.6.2
     # via jupyter-server
 appnope==0.1.3
@@ -23,6 +27,8 @@ asttokens==2.2.1
     # via stack-data
 attrs==22.2.0
     # via jsonschema
+babel==2.11.0
+    # via jupyterlab-server
 backcall==0.2.0
     # via ipython
 beautifulsoup4==4.11.2
@@ -31,12 +37,16 @@ black==23.1.0
     # via -r requirements.in
 bleach==6.0.0
     # via nbconvert
+certifi==2022.12.7
+    # via requests
 cffi==1.15.1
     # via
     #   argon2-cffi-bindings
     #   cryptography
 charset-normalizer==3.0.1
-    # via pdfminer-six
+    # via
+    #   pdfminer-six
+    #   requests
 click==8.1.3
     # via black
 comm==0.1.2
@@ -61,27 +71,20 @@ idna==3.4
     # via
     #   anyio
     #   jsonschema
+    #   requests
 ipykernel==6.20.2
     # via
-    #   ipywidgets
-    #   jupyter
-    #   jupyter-console
     #   nbclassic
     #   notebook
-    #   qtconsole
 ipython==8.9.0
     # via
     #   ipykernel
-    #   ipywidgets
-    #   jupyter-console
+    #   jupyterlab
     #   nbqa
 ipython-genutils==0.2.0
     # via
     #   nbclassic
     #   notebook
-    #   qtconsole
-ipywidgets==8.0.4
-    # via jupyter
 isoduration==20.11.0
     # via jsonschema
 isort==5.12.0
@@ -91,51 +94,65 @@ jedi==0.18.2
 jinja2==3.1.2
     # via
     #   jupyter-server
+    #   jupyterlab
+    #   jupyterlab-server
     #   nbclassic
     #   nbconvert
     #   notebook
+json5==0.9.11
+    # via jupyterlab-server
 jsonpointer==2.3
     # via jsonschema
 jsonschema[format-nongpl]==4.17.3
     # via
     #   jupyter-events
+    #   jupyterlab-server
     #   nbformat
-jupyter==1.0.0
-    # via -r requirements.in
 jupyter-client==8.0.2
     # via
     #   ipykernel
-    #   jupyter-console
     #   jupyter-server
     #   nbclassic
     #   nbclient
     #   nbexec
     #   notebook
-    #   qtconsole
-jupyter-console==6.4.4
-    # via jupyter
 jupyter-core==5.2.0
     # via
     #   jupyter-client
     #   jupyter-server
+    #   jupyterlab
     #   nbclassic
     #   nbclient
     #   nbconvert
     #   nbformat
     #   notebook
-    #   qtconsole
 jupyter-events==0.6.3
-    # via jupyter-server
+    # via
+    #   jupyter-server
+    #   jupyter-server-fileid
 jupyter-server==2.2.0
     # via
+    #   jupyter-server-fileid
+    #   jupyterlab
+    #   jupyterlab-server
     #   nbclassic
     #   notebook-shim
+jupyter-server-fileid==0.7.0
+    # via jupyter-server-ydoc
 jupyter-server-terminals==0.4.4
     # via jupyter-server
+jupyter-server-ydoc==0.6.1
+    # via jupyterlab
+jupyter-ydoc==0.2.2
+    # via
+    #   jupyter-server-ydoc
+    #   jupyterlab
+jupyterlab==3.6.1
+    # via -r requirements.in
 jupyterlab-pygments==0.2.2
     # via nbconvert
-jupyterlab-widgets==3.0.5
-    # via ipywidgets
+jupyterlab-server==2.19.0
+    # via jupyterlab
 markupsafe==2.1.2
     # via
     #   jinja2
@@ -151,12 +168,13 @@ mistune==2.0.4
 mypy-extensions==0.4.3
     # via black
 nbclassic==0.5.1
-    # via notebook
+    # via
+    #   jupyterlab
+    #   notebook
 nbclient==0.7.2
     # via nbconvert
 nbconvert==7.2.9
     # via
-    #   jupyter
     #   jupyter-server
     #   nbclassic
     #   nbexec
@@ -179,7 +197,7 @@ nest-asyncio==1.5.6
     #   nbclassic
     #   notebook
 notebook==6.5.2
-    # via jupyter
+    # via jupyterlab
 notebook-shim==0.2.2
     # via nbclassic
 numpy==1.24.1
@@ -189,8 +207,9 @@ packaging==23.0
     #   black
     #   ipykernel
     #   jupyter-server
+    #   jupyterlab
+    #   jupyterlab-server
     #   nbconvert
-    #   qtpy
 pandas==1.5.3
     # via -r requirements.in
 pandocfilters==1.5.0
@@ -219,9 +238,7 @@ prometheus-client==0.16.0
     #   nbclassic
     #   notebook
 prompt-toolkit==3.0.36
-    # via
-    #   ipython
-    #   jupyter-console
+    # via ipython
 psutil==5.9.4
     # via ipykernel
 ptyprocess==0.7.0
@@ -239,9 +256,7 @@ pyflakes==3.0.1
 pygments==2.14.0
     # via
     #   ipython
-    #   jupyter-console
     #   nbconvert
-    #   qtconsole
 pyrsistent==0.19.3
     # via jsonschema
 python-dateutil==2.8.2
@@ -252,7 +267,9 @@ python-dateutil==2.8.2
 python-json-logger==2.0.4
     # via jupyter-events
 pytz==2022.7.1
-    # via pandas
+    # via
+    #   babel
+    #   pandas
 pyyaml==6.0
     # via jupyter-events
 pyzmq==25.0.0
@@ -262,11 +279,8 @@ pyzmq==25.0.0
     #   jupyter-server
     #   nbclassic
     #   notebook
-    #   qtconsole
-qtconsole==5.4.0
-    # via jupyter
-qtpy==2.3.0
-    # via qtconsole
+requests==2.28.2
+    # via jupyterlab-server
 rfc3339-validator==0.1.4
     # via
     #   jsonschema
@@ -305,12 +319,14 @@ tokenize-rt==5.0.0
 tomli==2.0.1
     # via
     #   black
+    #   jupyterlab
     #   nbqa
 tornado==6.2
     # via
     #   ipykernel
     #   jupyter-client
     #   jupyter-server
+    #   jupyterlab
     #   nbclassic
     #   notebook
     #   terminado
@@ -319,7 +335,6 @@ traitlets==5.9.0
     #   comm
     #   ipykernel
     #   ipython
-    #   ipywidgets
     #   jupyter-client
     #   jupyter-core
     #   jupyter-events
@@ -330,9 +345,10 @@ traitlets==5.9.0
     #   nbconvert
     #   nbformat
     #   notebook
-    #   qtconsole
 uri-template==1.2.0
     # via jsonschema
+urllib3==1.26.14
+    # via requests
 wand==0.6.11
     # via pdfplumber
 wcwidth==0.2.6
@@ -345,5 +361,9 @@ webencodings==0.5.1
     #   tinycss2
 websocket-client==1.5.0
     # via jupyter-server
-widgetsnbextension==4.0.5
-    # via ipywidgets
+y-py==0.5.5
+    # via
+    #   jupyter-ydoc
+    #   ypy-websocket
+ypy-websocket==0.8.2
+    # via jupyter-server-ydoc
