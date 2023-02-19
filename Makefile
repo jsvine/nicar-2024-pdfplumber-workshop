@@ -18,6 +18,9 @@ imagemagick-mac:
 	@brew install freetype imagemagick@7
 	@if [ ! -f "/usr/local/lib/libMagickWand.dylib" ]; then find $$(brew --prefix imagemagick@7)/lib -name "libMagickWand*.dylib" -type f -exec ln -s {} /usr/local/lib/libMagickWand.dylib \;; fi
 
+imagemagick-linux:
+	@apt-get imagemagick libmagickwand-dev
+
 venv: config/requirements.txt
 	@if [ ! -d "venv" ]; then python3 -m venv venv; fi
 	@venv/bin/pip install -r config/requirements.txt
