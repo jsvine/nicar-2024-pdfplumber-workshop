@@ -28,7 +28,7 @@ venv: config/requirements.txt
 lint:
 	nbqa black --check notebooks
 	nbqa isort --check notebooks
-	nbqa flake8 notebooks
+	nbqa flake8 notebooks --max-line-length 88
 
 format:
 	nbqa black notebooks
