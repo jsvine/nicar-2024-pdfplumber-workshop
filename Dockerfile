@@ -10,8 +10,7 @@ RUN adduser --disabled-password \
     ${NB_USER}
 
 RUN apt-get -q update && apt-get -qy dist-upgrade
-RUN apt-get -qy install gcc imagemagick libmagickwand-dev
-COPY ./config/policy.xml /etc/ImageMagick-6/policy.xml
+RUN apt-get -qy install gcc
 
 COPY . ${HOME}
 RUN pip install --no-cache --upgrade pip
