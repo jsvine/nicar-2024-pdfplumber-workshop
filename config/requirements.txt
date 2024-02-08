@@ -4,27 +4,24 @@
 #
 #    pip-compile requirements.in
 #
-aiofiles==22.1.0
-    # via ypy-websocket
-aiosqlite==0.18.0
-    # via ypy-websocket
 anyio==3.6.2
-    # via jupyter-server
+    # via
+    #   httpx
+    #   jupyter-server
 appnope==0.1.3
     # via
     #   ipykernel
     #   ipython
 argon2-cffi==21.3.0
-    # via
-    #   jupyter-server
-    #   nbclassic
-    #   notebook
+    # via jupyter-server
 argon2-cffi-bindings==21.2.0
     # via argon2-cffi
 arrow==1.2.3
     # via isoduration
 asttokens==2.2.1
     # via stack-data
+async-lru==2.0.4
+    # via jupyterlab
 attrs==22.2.0
     # via jsonschema
 babel==2.11.0
@@ -38,7 +35,10 @@ black==23.1.0
 bleach==6.0.0
     # via nbconvert
 certifi==2022.12.7
-    # via requests
+    # via
+    #   httpcore
+    #   httpx
+    #   requests
 cffi==1.15.1
     # via
     #   argon2-cffi-bindings
@@ -67,24 +67,24 @@ flake8==6.0.0
     # via -r requirements.in
 fqdn==1.5.1
     # via jsonschema
+h11==0.14.0
+    # via httpcore
+httpcore==1.0.2
+    # via httpx
+httpx==0.26.0
+    # via jupyterlab
 idna==3.4
     # via
     #   anyio
+    #   httpx
     #   jsonschema
     #   requests
 ipykernel==6.20.2
-    # via
-    #   nbclassic
-    #   notebook
+    # via jupyterlab
 ipython==8.9.0
     # via
     #   ipykernel
-    #   jupyterlab
     #   nbqa
-ipython-genutils==0.2.0
-    # via
-    #   nbclassic
-    #   notebook
 isoduration==20.11.0
     # via jsonschema
 isort==5.12.0
@@ -96,9 +96,7 @@ jinja2==3.1.2
     #   jupyter-server
     #   jupyterlab
     #   jupyterlab-server
-    #   nbclassic
     #   nbconvert
-    #   notebook
 json5==0.9.11
     # via jupyterlab-server
 jsonpointer==2.3
@@ -112,42 +110,29 @@ jupyter-client==8.0.2
     # via
     #   ipykernel
     #   jupyter-server
-    #   nbclassic
     #   nbclient
     #   nbexec
-    #   notebook
 jupyter-core==5.2.0
     # via
     #   jupyter-client
     #   jupyter-server
     #   jupyterlab
-    #   nbclassic
     #   nbclient
     #   nbconvert
     #   nbformat
-    #   notebook
 jupyter-events==0.6.3
+    # via jupyter-server
+jupyter-lsp==2.2.2
+    # via jupyterlab
+jupyter-server==2.7.0
     # via
-    #   jupyter-server
-    #   jupyter-server-fileid
-jupyter-server==2.2.0
-    # via
-    #   jupyter-server-fileid
+    #   jupyter-lsp
     #   jupyterlab
     #   jupyterlab-server
-    #   nbclassic
     #   notebook-shim
-jupyter-server-fileid==0.7.0
-    # via jupyter-server-ydoc
 jupyter-server-terminals==0.4.4
     # via jupyter-server
-jupyter-server-ydoc==0.6.1
-    # via jupyterlab
-jupyter-ydoc==0.2.2
-    # via
-    #   jupyter-server-ydoc
-    #   jupyterlab
-jupyterlab==3.6.1
+jupyterlab==4.1.0
     # via -r requirements.in
 jupyterlab-pygments==0.2.2
     # via nbconvert
@@ -167,41 +152,32 @@ mistune==2.0.4
     # via nbconvert
 mypy-extensions==0.4.3
     # via black
-nbclassic==0.5.1
-    # via
-    #   jupyterlab
-    #   notebook
 nbclient==0.7.2
     # via nbconvert
 nbconvert==7.2.9
     # via
     #   jupyter-server
-    #   nbclassic
     #   nbexec
-    #   notebook
 nbexec==0.2.0
     # via -r requirements.in
 nbformat==5.7.3
     # via
     #   jupyter-server
-    #   nbclassic
     #   nbclient
     #   nbconvert
     #   nbexec
-    #   notebook
 nbqa==1.6.1
     # via -r requirements.in
 nest-asyncio==1.5.6
-    # via
-    #   ipykernel
-    #   nbclassic
-    #   notebook
-notebook==6.5.2
-    # via jupyterlab
+    # via ipykernel
 notebook-shim==0.2.2
-    # via nbclassic
+    # via jupyterlab
 numpy==1.24.1
-    # via pandas
+    # via
+    #   pandas
+    #   pyarrow
+overrides==7.7.0
+    # via jupyter-server
 packaging==23.0
     # via
     #   black
@@ -210,7 +186,7 @@ packaging==23.0
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
-pandas==2.0.3
+pandas==2.2.0
     # via -r requirements.in
 pandocfilters==1.5.0
     # via nbconvert
@@ -220,7 +196,7 @@ pathspec==0.11.0
     # via black
 pdfminer-six==20221105
     # via pdfplumber
-pdfplumber==0.10.1
+pdfplumber==0.10.3
     # via -r requirements.in
 pexpect==4.8.0
     # via ipython
@@ -233,10 +209,7 @@ platformdirs==2.6.2
     #   black
     #   jupyter-core
 prometheus-client==0.16.0
-    # via
-    #   jupyter-server
-    #   nbclassic
-    #   notebook
+    # via jupyter-server
 prompt-toolkit==3.0.36
     # via ipython
 psutil==5.9.4
@@ -247,6 +220,8 @@ ptyprocess==0.7.0
     #   terminado
 pure-eval==0.2.2
     # via stack-data
+pyarrow==15.0.0
+    # via -r requirements.in
 pycodestyle==2.10.0
     # via flake8
 pycparser==2.21
@@ -279,8 +254,6 @@ pyzmq==25.0.0
     #   ipykernel
     #   jupyter-client
     #   jupyter-server
-    #   nbclassic
-    #   notebook
 requests==2.28.2
     # via jupyterlab-server
 rfc3339-validator==0.1.4
@@ -292,10 +265,7 @@ rfc3986-validator==0.1.1
     #   jsonschema
     #   jupyter-events
 send2trash==1.8.0
-    # via
-    #   jupyter-server
-    #   nbclassic
-    #   notebook
+    # via jupyter-server
 six==1.16.0
     # via
     #   asttokens
@@ -303,7 +273,9 @@ six==1.16.0
     #   python-dateutil
     #   rfc3339-validator
 sniffio==1.3.0
-    # via anyio
+    # via
+    #   anyio
+    #   httpx
 soupsieve==2.3.2.post1
     # via beautifulsoup4
 stack-data==0.6.2
@@ -312,8 +284,6 @@ terminado==0.17.1
     # via
     #   jupyter-server
     #   jupyter-server-terminals
-    #   nbclassic
-    #   notebook
 tinycss2==1.2.1
     # via nbconvert
 tokenize-rt==5.0.0
@@ -326,8 +296,6 @@ tornado==6.2
     #   jupyter-client
     #   jupyter-server
     #   jupyterlab
-    #   nbclassic
-    #   notebook
     #   terminado
 traitlets==5.9.0
     # via
@@ -338,12 +306,11 @@ traitlets==5.9.0
     #   jupyter-core
     #   jupyter-events
     #   jupyter-server
+    #   jupyterlab
     #   matplotlib-inline
-    #   nbclassic
     #   nbclient
     #   nbconvert
     #   nbformat
-    #   notebook
 tzdata==2023.3
     # via pandas
 uri-template==1.2.0
@@ -360,9 +327,3 @@ webencodings==0.5.1
     #   tinycss2
 websocket-client==1.5.0
     # via jupyter-server
-y-py==0.5.5
-    # via
-    #   jupyter-ydoc
-    #   ypy-websocket
-ypy-websocket==0.8.2
-    # via jupyter-server-ydoc

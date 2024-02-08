@@ -1,37 +1,25 @@
-# `pdfplumber`: A NICAR 2023 Workshop
+# `pdfplumber`: A NICAR 2024 Workshop
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jsvine/nicar-2023-pdfplumber-workshop/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jsvine/nicar-2024-pdfplumber-workshop/HEAD)
 
 ## Local installation instructions
 
-### MacOS
+### Install dependencies
 
 ```
-make imagemagick-mac
 make venv
 ```
 
-### Linux
+### Test that the installation worked
 
 ```
-make imagemagick-linux
-make venv
-```
-
-## To test that the installation worked
-
-```
-venv/bin/nbexec notebooks
+make test
 ```
 
 ... should not throw an error.
 
-### If you encounter a "PolicyError"
-
-Follow [these instructions](https://stackoverflow.com/a/52701227).
-
 ## Running Jupyter Lab
 
 ```
-venv/bin/jupyter lab
+make lab
 ```

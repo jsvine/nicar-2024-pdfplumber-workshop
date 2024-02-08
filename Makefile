@@ -18,14 +18,20 @@ venv: config/requirements.txt
 	@if [ ! -d "venv" ]; then python3 -m venv venv; fi
 	@venv/bin/pip install -r config/requirements.txt
 
+test:
+	@venv/bin/nbexec notebooks
+
+lab:
+	@venv/bin/jupyter lab
+
 lint:
-	nbqa black --check notebooks
-	nbqa isort --check notebooks
-	nbqa flake8 notebooks --max-line-length 88
+	venv/bin/nbqa black --check notebooks
+	venv/bin/nbqa isort --check notebooks
+	venv/bin/nbqa flake8 notebooks --max-line-length 88
 
 format:
-	nbqa black notebooks
-	nbqa isort notebooks
+	venv/bin/nbqa black notebooks
+	venv/bin/nbqa isort notebooks
 
 notebooks:
-	nbexec notebooks
+	venv/bin/nbexec notebooks
